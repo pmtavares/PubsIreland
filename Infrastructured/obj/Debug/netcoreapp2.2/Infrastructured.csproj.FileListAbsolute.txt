@@ -1,0 +1,11 @@
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\bin\Debug\netcoreapp2.2\Infrastructured.deps.json
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\bin\Debug\netcoreapp2.2\Infrastructured.dll
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\bin\Debug\netcoreapp2.2\Infrastructured.pdb
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\obj\Debug\netcoreapp2.2\Infrastructured.csprojAssemblyReference.cache
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\obj\Debug\netcoreapp2.2\Infrastructured.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\obj\Debug\netcoreapp2.2\Infrastructured.AssemblyInfoInputs.cache
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\obj\Debug\netcoreapp2.2\Infrastructured.AssemblyInfo.cs
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\obj\Debug\netcoreapp2.2\Infrastructured.dll
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\obj\Debug\netcoreapp2.2\Infrastructured.pdb
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\bin\Debug\netcoreapp2.2\Infrastructured.runtimeconfig.json
+C:\Users\User\Documents\Projects\AspNetCore\pubsIreland\Infrastructured\bin\Debug\netcoreapp2.2\Infrastructured.runtimeconfig.dev.json
