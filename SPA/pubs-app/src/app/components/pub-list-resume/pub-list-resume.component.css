@@ -1,0 +1,28 @@
+.my-container
+{
+    width: 90%;
+    margin: auto;
+    
+}
+.side-container
+{
+    padding: auto;
+    flex: auto;
+    align-content: flex-end;
+
+}
+.search-button
+{
+    margin-right: 0;
+    background-color: #E0E0E0
+}
+.search-form
+{
+
+    text-align: end;
+}
+.form-search
+{
+    width: 80%;
+    margin-right: 0;
+}

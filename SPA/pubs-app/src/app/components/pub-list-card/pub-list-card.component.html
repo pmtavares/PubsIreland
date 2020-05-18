@@ -1,0 +1,27 @@
+<div class="my-container">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let pub of pubs">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{pub.name}}</mat-card-title>
+          <mat-card-subtitle>{{pub.city}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image [src]="pub.imagePath" [alt]="pub.name" class="card-image">
+        <mat-card-content>
+          <p class="text-justify">
+            {{pub.description | slice:0:300}}...
+          </p>
+        </mat-card-content>
+        <mat-card-actions>
+          <div class="row justify-content-end mr-2">
+              <button mat-button [routerLink]="['/pubs/', pub.id]">More...</button>
+          </div>
+
+        </mat-card-actions>
+      </mat-card>
+    </div>
+
+  </div>
+ 
+</div>

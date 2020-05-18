@@ -1,0 +1,24 @@
+<div class="my-container">
+  <div>
+      <carousel [isAnimated]="true">
+          <div  *ngFor="let pub of pubs">
+            <slide>
+              <img src={{pub.imagePath}} alt={{pub.name}} class="image-slide">
+              <div class="carousel-caption d-none d-md-block">
+                <h3>{{pub.name}}</h3>
+                <p>{{pub.address}}</p>
+              </div>
+            </slide>
+          </div>
+      </carousel>
+  </div>
+  
+  <div class="row">
+      <div class="col-12 text-center my-5">
+        <h2 class="display-3"><i class="fa fa-beer" aria-hidden="true"></i>Welcome to Irish Pubs</h2>
+        <p>Welcome to our website. Here you will have information about pubs in Ireland</p>
+      </div>
+  </div>
+
+</div>
+

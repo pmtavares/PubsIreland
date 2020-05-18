@@ -1,0 +1,17 @@
+<div>
+    <mat-toolbar color="primary">
+        <mat-toolbar-row>
+          <span><img src="assets/images/logo/logo.png" class="logo-image" /></span>
+          <div class="menu-spacer"></div>
+          <a mat-button routerLink="home">Home</a>
+          <a mat-button routerLink="about">About</a>
+          <a mat-button>Pubs</a>
+          <a mat-button [routerLink]="'contact'">Contact</a>
+          <a mat-button [matMenuTriggerFor]="menu">Login</a>
+          <mat-menu #menu="matMenu">
+            <a mat-menu-item routerLink="login">Login</a>
+            <a mat-menu-item routerLink="pubs/register">Register</a>
+          </mat-menu>
+        </mat-toolbar-row>
+      </mat-toolbar>
+</div>

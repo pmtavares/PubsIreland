@@ -1,0 +1,77 @@
+.my-container
+{
+    min-height: 40em;
+    width: 90%;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+.details-title
+{
+    font-size: 3.2em;
+    padding: 0.3em;
+    
+    text-align: center;
+    position: relative;
+    width: 90%;
+
+}
+.city-badget
+{
+    width: 100%;
+    /*border-bottom: 1px solid #b3b3b3; */
+
+    align-items: flex-end;
+
+}
+.details-user
+{
+    border-bottom: 1px solid #b3b3b3;
+    margin-bottom: 1em;
+    font-size: 0.8em;
+    text-align: left;
+    width: 90%;
+    color: #a1a0a0;
+    padding: 0;
+}
+.details-photo
+{
+    width: 90%;
+    padding: 0
+
+}
+.details-photo img{
+    width: 100%;
+}
+.details-pub
+{
+    width: 90%;
+    margin-top: 0.3em;
+    border-bottom: 1px solid #b3b3b3;
+    font-size: 0.8em;
+    text-align: left;
+    color: #a1a0a0;
+    padding: 0;
+}
+.details-content
+{
+    font-size: 1.2em;
+    width: 90%;
+    margin-top: 0.4em;
+    text-align: justify;
+    position: relative;
+}
+.details-review
+{
+    margin-top: 1em;
+}
+.details-contact
+{
+    margin-top: 2em;
+    
+}
+.icon-contact
+{
+    font-size: 1.5em;
+    margin: 0em 0.5em 1em 0.5em;
+}

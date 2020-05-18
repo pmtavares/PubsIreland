@@ -1,0 +1,75 @@
+<div class="my-container">
+    <div class="row" *ngIf="pubDetails">
+        <div class="col-lg-7 mt-3">
+            <div class="col-lg-12 col-md-7">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a [routerLink]="'/home'">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Pub Details</li>
+                            </ol>
+                        </nav>
+                    </div>
+                    <div class="col-lg-4 d-flex">
+                        <div class="city-badget">
+                            <mat-chip-list>
+                                <mat-chip>{{pubDetails.city}}</mat-chip>
+                            </mat-chip-list>                       
+                        </div> 
+                    </div>
+                </div>
+                
+            </div>
+            
+            
+            <div class="col-lg-12">
+                <p class="details-title">{{pubDetails.name}}</p>
+            </div>
+            <div class="col-lg-12 details-user">
+            <p>{{pubDetails.dateAdded | date: "dd/MM/yyyy"}} | User</p>
+            </div>
+            <div class="col-lg-12 details-photo">
+                <img [src]="[pubDetails.imagePath]" >
+            </div>
+            <div class="col-lg-12 details-pub">
+                <p >Founded in {{pubDetails.dateFounded | date: "dd/MM/yyyy"}}</p>
+            </div>
+            <div class="col-lg-12" class="details-content">
+                <p>{{pubDetails.description}}</p>
+                <p>{{pubDetails.descriptionDetailed}}</p>
+            </div>
+        </div>
+        <div class="col-lg-3 mt-3 ml-2 justify-content-end">
+            <div class="col-lg-12 details-review">
+                <h3>Reviews</h3>
+                <p>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                    <mat-icon>star</mat-icon>
+                </p>
+                
+            </div>
+            <div class="col-lg-12">
+                <div class="details-contact">
+                    <h3>Contact</h3>
+                    <mat-list>     
+                        <div class="row"><mat-icon class="icon-contact">phone</mat-icon>{{pubDetails.phoneNumber}} </div>                           
+                        <div class="row"> <mat-icon class="icon-contact">email</mat-icon> test@test.com</div>
+                        <div class="row"> <mat-icon class="icon-contact">language</mat-icon>{{pubDetails.website}}  </div>
+                    </mat-list>
+                </div>
+                    
+            </div>
+            <mat-divider></mat-divider>
+            <div class="col-lg-12 mt-3">
+                <div class="row">
+                        <mat-icon class="icon-contact">room</mat-icon>
+                        <h3>Find location </h3>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+</div>

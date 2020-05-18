@@ -1,0 +1,29 @@
+@font-face 
+{
+    font-family: FirstLetter;
+    src: url("../../../assets/fonts/Kenia-Regular.ttf")
+}
+
+.myContainer
+{
+    margin-top: 50px;
+    width: 99%;
+    margin: auto;
+    color: white;
+}
+.myContainer a{
+    text-decoration: none;
+    color: #e3e2e2;
+}
+.footer-header
+{
+    background-color: #616161; 
+}
+.footer-bottom{
+    background-color: #424242
+}
+.footer-bottom-text
+{
+    font-size: small;
+    color: #e3e2e2
+}
