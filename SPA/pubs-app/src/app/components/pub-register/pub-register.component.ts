@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
 import { IPub } from 'src/app/models/pub';
 import { PubsService } from 'src/app/services/pubs.service';
+import { CitiesService } from 'src/app/services/cities.service';
+import { ICity } from 'src/app/models/city';
 
 @Component({
   selector: 'app-pub-register',
@@ -21,13 +23,16 @@ export class PubRegisterComponent implements OnInit {
     website: "",
     dateAdded: new Date(),
     dateFounded: null,
-    cityId: ""
+    cityId: null
 
   };
 
-  constructor(private pubService: PubsService, private router: Router) { }
+  cities: ICity[];
+
+  constructor(private pubService: PubsService, private cityService: CitiesService ,private router: Router) { }
 
   ngOnInit() {
+    this.getCities();
   }
 
   cancel()
@@ -44,6 +49,14 @@ export class PubRegisterComponent implements OnInit {
     error => {
       console.log(error)
     });
+  }
+
+  getCities()
+  {
+    this.cityService.getCities().subscribe(
+      data=> this.cities = data.sort((a,b)=> (a.name > b.name)? 1: -1),
+      error => console.log(error)
+    )
   }
 
 }

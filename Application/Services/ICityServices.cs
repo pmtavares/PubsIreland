@@ -9,5 +9,7 @@ namespace Application.Services
     public interface ICityServices
     {
         Task<IEnumerable<CityDto>> GetCities();
+
+        Task<IEnumerable<CityDto>> GetCities(string name);
     }
 }

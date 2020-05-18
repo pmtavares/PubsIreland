@@ -23,7 +23,6 @@ export class PubsListCarouselComponent implements OnInit {
       data => this.pubs = data,
       error => console.log(error)
     )
-    console.log(this.pubs)
   }
 
 }

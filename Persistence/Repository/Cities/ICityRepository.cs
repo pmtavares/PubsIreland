@@ -10,6 +10,6 @@ namespace Persistence.Repository.Cities
     {
         Task<IEnumerable<City>> GetCities();
 
-        Task<City> GetCityByName(string name);
+        Task<IEnumerable<City>> GetCityByName(string name);
     }
 }

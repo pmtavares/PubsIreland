@@ -44,6 +44,11 @@ export class PubsService implements OnInit{
     return this.http.get<IPub>(this.baseUrl+"/"+ id)
   }
 
+  getPubsByCity(city: string): Observable<IPub[]>
+  {
+    return this.http.get<IPub[]>(this.baseUrl+"/city/"+ city);
+  }
+
   //Register pub
   registerPub(pub: IPub)
   {

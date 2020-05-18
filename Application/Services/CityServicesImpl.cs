@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,6 +30,20 @@ namespace Application.Services
                 throw new RestExceptions(HttpStatusCode.NotFound, new { Cities = "Not found" });
             }
 
+            var result = _mapper.Map<IEnumerable<CityDto>>(cities);
+            return result;
+
+        }
+
+        public async Task<IEnumerable<CityDto>> GetCities(string name)
+        {
+            var cities = await _repository.GetCityByName(name);
+
+            if(cities == null || !cities.Any())
+            {
+                throw new RestExceptions(HttpStatusCode.NotFound, new { Cities = "Not found" });
+
+            }
             var result = _mapper.Map<IEnumerable<CityDto>>(cities);
             return result;
 

@@ -25,6 +25,7 @@ import { ContactComponent } from './components/contact/contact.component';
 import { PubDetailsComponent } from './components/pub-details/pub-details.component';
 import { PubRegisterComponent } from './components/pub-register/pub-register.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { PubsSearchComponent } from './components/pubs-search/pubs-search.component';
 
 
 
@@ -46,6 +47,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     PubDetailsComponent,
     PubRegisterComponent,
     NavbarComponent,
+    PubsSearchComponent,
 
   ],
   imports: [

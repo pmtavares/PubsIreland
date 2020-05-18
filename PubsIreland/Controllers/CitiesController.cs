@@ -22,5 +22,12 @@ namespace PubsIreland.Controllers
             var cities = await _service.GetCities();
             return Ok(cities);
         }
+
+        [HttpGet("{city}")]
+        public async Task<IActionResult> GetCities(string city)
+        {
+            var cities = await _service.GetCities(city);
+            return Ok(cities);
+        }
     }
 }

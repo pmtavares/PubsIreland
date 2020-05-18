@@ -33,8 +33,16 @@
                         <div class="row">
                                 <mat-form-field class="thirdth-width">
                                         <mat-label>City</mat-label>
-                                        <input matInput name="city" [(ngModel)]="pub.cityId" required
-                                                placeholder="Ex. Dublin">
+                                        <mat-select  [(ngModel)]="pub.cityId" required #city="ngModel" name="city">
+                                                <mat-option *ngFor="let city of cities"[value]="city.id">
+                                                        {{city.name}}
+                                                </mat-option>
+                                        </mat-select>
+                                        <mat-error *ngIf="!!city.invalid && !!city.touched && !!city.errors.required">Please choose a city</mat-error>
+                                        <div *ngIf="pub.city">
+                                                <mat-hint>Pedro</mat-hint>
+                                        </div>
+                                        
                                 </mat-form-field>  
                                 <mat-form-field class="thirdth-width">
                                         <mat-label>Phone Number</mat-label>

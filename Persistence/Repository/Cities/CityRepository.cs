@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Domain;
@@ -20,9 +21,9 @@ namespace Persistence.Repository.Cities
             return cities;
         }
 
-        public async Task<City> GetCityByName(string name)
+        public async Task<IEnumerable<City>> GetCityByName(string name)
         {
-            var city = await _context.Cities.SingleOrDefaultAsync(c => c.Name == name);
+            var city = await _context.Cities.Where(c=> c.Name == name).ToArrayAsync();
             return city;
         }
     }
