@@ -8,9 +8,13 @@
     width: 95%;
     margin-left: 1em;
 }
+.half-width-wrapper
+{
+    width: 100%;
+}
 .half-width
 {
-    width: 45%;
+    width: 40%;
     margin-left: 1em;
 }
 .thirdth-width

@@ -20,7 +20,7 @@ export class PubRegisterComponent implements OnInit {
     phoneNumber: "",
     website: "",
     dateAdded: new Date(),
-    dateFounded: new Date(),
+    dateFounded: null,
     cityId: ""
 
   };
@@ -38,7 +38,8 @@ export class PubRegisterComponent implements OnInit {
   {
     console.log(this.pub)
     this.pubService.registerPub(this.pub).subscribe(()=> {
-      console.log("Success")
+      console.log("Success");
+      this.router.navigate(['home'])
     },
     error => {
       console.log(error)

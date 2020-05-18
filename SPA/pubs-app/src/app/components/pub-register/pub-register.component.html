@@ -1,4 +1,85 @@
 <div class="my-container">
-        register
-</div>
+        <div class="register-form">
+                <div class="row justify-content-center mb-5"><h3>Register Form</h3></div>
+                <form #registerForm="ngForm" (ngSubmit)="registerPub()">
+                        <div class="row">
+                                <mat-form-field  class="half-width">
+                                        <mat-label>Pub's name</mat-label>
+                                        <input matInput placeholder="Ex. My Irish pub" required
+                                                name="name"  [(ngModel)]="pub.name" #name="ngModel"
+                                        > 
+                                        <mat-error *ngIf="!!name.invalid && name.touched && !!name.errors.required">
+                                                Pub's name is required
+                                        </mat-error>  
+                                                
+                                </mat-form-field>  
 
+                                <mat-form-field class="half-width" >
+                                        <mat-label>Website</mat-label>
+                                        <input matInput name="website" [(ngModel)]="pub.website" >
+                                        
+                                </mat-form-field>        
+                        </div>
+                        <div class="row">
+                                <mat-form-field class="full-width">
+                                        <mat-label>Address</mat-label>
+                                        <input matInput name="address" #address="ngModel"
+                                        [(ngModel)]="pub.address" required>
+                                        <mat-error *ngIf="!!address.invalid && address.touched && !!address.errors.required">
+                                                        Address is required
+                                        </mat-error>  
+                                </mat-form-field>   
+                        </div>
+                        <div class="row">
+                                <mat-form-field class="thirdth-width">
+                                        <mat-label>City</mat-label>
+                                        <input matInput name="city" [(ngModel)]="pub.cityId" required
+                                                placeholder="Ex. Dublin">
+                                </mat-form-field>  
+                                <mat-form-field class="thirdth-width">
+                                        <mat-label>Phone Number</mat-label>
+                                        <input matInput name="phoneNumber" required [(ngModel)]="pub.phoneNumber" 
+                                                placeholder="Ex. 01 1234567" >
+                                </mat-form-field>  
+                                <mat-form-field class="thirdth-width">
+                                        <mat-label>Date founded</mat-label>
+                                        <input matInput name="dateFounded" required
+                                                [(ngModel)]="pub.dateFounded" placeholder="Ex. 01/01/2020" >
+                                </mat-form-field>  
+                        </div>
+
+                        <div class="row mt-3">
+                                <mat-form-field class="full-width">
+                                        <mat-label>Description</mat-label>
+                                        <textarea matInput #description name="description" required
+                                                maxlength='1000' [(ngModel)]="pub.description"
+                                                placeholder="Short resume" rows="4"></textarea>
+                                        <mat-hint align="start">Write an introduction</mat-hint>
+                                        <mat-hint align="end">{{description.value.length}} / 1000</mat-hint>
+                                </mat-form-field>   
+                        </div>
+                        <div class="row mt-3">
+                                <mat-form-field class="full-width">
+                                        <mat-label>Content</mat-label>
+                                        <textarea matInput #content maxlength='4000' name="content"
+                                                [(ngModel)]="pub.descriptionDetailed" required
+                                        placeholder="Content" rows="8"></textarea>
+                                        <mat-hint align="start">Write content here</mat-hint>
+                                        <mat-hint align="end">{{content.value.length}} / 4000</mat-hint>
+                                </mat-form-field>   
+                        </div>
+                        <div class="row mt-5 justify-content-end">
+                                <button mat-raised-button color="accent" (click)="cancel()"
+                                        class="m-4">
+                                        Cancel
+                                </button>
+                                <button mat-raised-button type="submit" [disabled]="!registerForm.valid"
+                                        color="primary" class="m-4">Submit
+
+                                </button>
+                        </div>
+                      
+                </form>
+        </div>        
+       
+</div>
