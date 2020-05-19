@@ -51,3 +51,7 @@ Thumbs.db
 /.vs/PubsIreland/v16/Server/sqlite3/storage.ide-wal
 /.vs/PubsIreland/v16/Server/sqlite3/storage.ide-shm
 /.vs/PubsIreland/v16/Server/sqlite3/storage.ide
+
+
+# Files
+/Application/bin

@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTableDataSource } from '@angular/material';
+import {MatSort} from '@angular/material/sort';
 import { PubsService } from 'src/app/services/pubs.service';
 import { IPub } from 'src/app/models/pub';
 import {MatPaginator} from '@angular/material/paginator';
+import {  ActivatedRoute } from '@angular/router';
 
 
 
@@ -17,13 +19,20 @@ export class PubsSearchComponent implements OnInit {
 
   displayedColumns: string[] = ['image', 'name', 'phone', 'city', 'dateFounded', 'website'];
   dataSource: MatTableDataSource<IPub>;
+
   pubs: IPub[];
+  cityName: string;
+
+
   @ViewChild(MatPaginator) paginator: MatPaginator;
 
-  constructor(private pubService: PubsService) { }
+  @ViewChild(MatSort) sort: MatSort;
+
+  constructor(private pubService: PubsService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.getPubsByCity("Dublin");
+    this.cityName = this.route.snapshot.paramMap.get('city');
+    this.getPubsByCity(this.cityName);
   }
 
   applyFilter(event: Event)
@@ -31,10 +40,9 @@ export class PubsSearchComponent implements OnInit {
     const filterValue = (event.target as HTMLInputElement).value;
     this.dataSource.filter = filterValue.trim().toLowerCase(); 
 
-    
   }
   
-  getPubsByCity(city: string)
+  getPubsByCity(city: string )
   {
     this.pubService.getPubsByCity(city).subscribe(
       response => 
@@ -52,6 +60,7 @@ export class PubsSearchComponent implements OnInit {
     this.dataSource= new MatTableDataSource(this.pubs);
 
     this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
 
     //apply filter only to one column (name). If we remove it, filter will apply everywhere
     this.dataSource.filterPredicate = (data: IPub, filter: string) => {

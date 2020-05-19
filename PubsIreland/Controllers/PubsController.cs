@@ -47,7 +47,7 @@ namespace PubsIreland.Controllers
             return Ok(pubs);
         }
 
-        [HttpGet("city/{city}")]
+        [HttpGet("search/cities/{city}")]
         public async Task<IActionResult> GetPubsByCity(string city)
         {
             var pubs = await _services.GetPubsByCity(city);
