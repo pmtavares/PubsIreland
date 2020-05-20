@@ -21,6 +21,8 @@ namespace Application.Services
 
         Task<IEnumerable<PubDto>> GetRecentAdded(int number);
 
-        Task<bool> RegisterPubAsync(PubDtoForCreation dto);
+        Task<PubDto> RegisterPubAsync(PubDtoForCreation dto);
+
+        Task<string> Login(string username, string password);
     }
 }

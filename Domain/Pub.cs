@@ -39,6 +39,7 @@ namespace Domain
         public DateTime DateFounded { get; set; }
         public DateTime DateAdded { get; set; }
 
+        [Required]
         public string Username {get; set;}
 
         public DateTime LastActive { get; set; }

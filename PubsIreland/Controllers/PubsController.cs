@@ -14,6 +14,7 @@ namespace PubsIreland.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("CorsPolicy")]
+    [Authorize]
     public class PubsController : ControllerBase
     {
         private readonly IPubServices _services;
@@ -24,8 +25,10 @@ namespace PubsIreland.Controllers
             _services = services;
 
         }
+
+       
         [HttpGet]
-        
+        [AllowAnonymous]
         public async Task<IActionResult> GetPubs()
         {
             var pubs = await _services.GetAllPubs();
@@ -75,5 +78,14 @@ namespace PubsIreland.Controllers
             await _services.RegisterPubAsync(dto);
             return StatusCode(201);
         }
+
+        [HttpPost("login")]
+        public async Task<IActionResult> Login(UserLoginDto dto)
+        {
+            var pubToken = await _services.Login(dto.Username, dto.Password);
+
+            return Ok(new { token = pubToken});
+        }
+
     }
 }

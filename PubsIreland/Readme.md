@@ -13,6 +13,10 @@
 Watch Run: dotnet watch run (works only inside the startup project)
 
 
+>> dotnet user-secrets set "AppSettings":Token" "SecretKeyForPubs"
+>> dotnet user-secrets list
+
+
 ### Back end installation
 
 
@@ -22,4 +26,6 @@ Watch Run: dotnet watch run (works only inside the startup project)
 . Microsoft.EntityFrameworkCore 2.2.6: Persistence
 . Microsoft.EntityFrameworkCore.Design: Persistence
 . AutoMapper.Extensions.Microsoft.DependencyInjection: Application
+
+
 

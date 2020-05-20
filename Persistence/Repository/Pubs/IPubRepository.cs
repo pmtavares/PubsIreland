@@ -22,6 +22,5 @@ namespace Persistence.Repository.Pubs
 
         Task<bool> RegisterPubAsync(Pub pub);
 
-
     }
 }

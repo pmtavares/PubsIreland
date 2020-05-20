@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 using Application.Configurations;
 using Application.Services;
 using AutoMapper;
 using Infrastructured.Errors;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -15,7 +17,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Microsoft.IdentityModel.Tokens;
 using Persistence;
+using Persistence.Repository;
+using Persistence.Repository.Auth;
 using Persistence.Repository.Cities;
 using Persistence.Repository.Pubs;
 
@@ -54,11 +59,27 @@ namespace PubsIreland
                 });
             });
 
+            //Authentication
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(
+                            Encoding.ASCII.GetBytes(Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
+
             services.AddAutoMapper(typeof(AutoMapperProfile)); //AutoMapper injection
             services.AddScoped<IPubServices, PubServicesImpl>();
             services.AddScoped<IPubRepository, PubRepository>();
             services.AddScoped<ICityServices, CityServicesImpl>();
             services.AddScoped<ICityRepository, CityRepository>();
+            services.AddScoped<IAuthRepository, AuthRepository>();
 
 
 
@@ -84,6 +105,9 @@ namespace PubsIreland
             }
             app.UseCors(x=> x.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
             //app.UseCors("CorsPolicy");
+
+            app.UseAuthentication();
+
             app.UseHttpsRedirection();
             app.UseMvc();
             

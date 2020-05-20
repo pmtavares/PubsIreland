@@ -54,4 +54,21 @@ Thumbs.db
 
 
 # Files
-/Application/bin
+/pubsIreland/Application/bin/
+/Application/bin/
+/Application/obj/
+appsettings.json
+*.dll
+*.cache
+*.targets
+/PubsIreland/obj/Debug/netcoreapp2.2/PubsIreland.RazorAssemblyInfo.cs
+/PubsIreland/obj/Debug/netcoreapp2.2/PubsIreland.pdb
+/PubsIreland/obj/Debug/netcoreapp2.2/PubsIreland.csproj.FileListAbsolute.txt
+/PubsIreland/obj/Debug/netcoreapp2.2/PubsIreland.csproj.CopyComplete
+/PubsIreland/obj/Debug/netcoreapp2.2/PubsIreland.AssemblyInfo.cs
+/PubsIreland/bin/Debug/netcoreapp2.2/PubsIreland.pdb
+/PubsIreland/bin/Debug/netcoreapp2.2/PubsIreland.deps.json
+/PubsIreland/bin/Debug/netcoreapp2.2/Persistence.pdb
+/PubsIreland/bin/Debug/netcoreapp2.2/Infrastructured.pdb
+/PubsIreland/bin/Debug/netcoreapp2.2/Domain.pdb
+/PubsIreland/bin/Debug/netcoreapp2.2/Application.pdb

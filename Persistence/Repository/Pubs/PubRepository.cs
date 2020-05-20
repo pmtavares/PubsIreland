@@ -45,15 +45,19 @@ namespace Persistence.Repository.Pubs
 
         public async Task<IEnumerable<Pub>> GetOldestPubs(int number)
         {
-            var pubs = await _context.Pubs.Include(x => x.City)
-                                            .Take(number)
-                                            .OrderBy(x => x.DateFounded).ToListAsync();
+            var pubs = await _context.Pubs
+                .Include(x => x.City)
+                .Take(number)
+                .OrderBy(x => x.DateFounded).ToListAsync();
             return pubs;
         }
 
         public async Task<IEnumerable<Pub>> GetMostRecentAdded(int number)
         {
-            var pubs = await _context.Pubs.Include(x => x.City).OrderByDescending(x => x.DateAdded).Take(number)
+            var pubs = await _context.Pubs
+                .Include(x => x.City)
+                .OrderByDescending(x => x.DateAdded)
+                .Take(number)
                 .ToListAsync();
             return pubs;
         }
@@ -64,6 +68,6 @@ namespace Persistence.Repository.Pubs
             return  await _context.SaveChangesAsync() > 0;
         }
 
-      
+     
     }
 }
