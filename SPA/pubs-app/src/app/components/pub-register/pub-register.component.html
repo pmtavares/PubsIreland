@@ -38,9 +38,11 @@
                                                         {{city.name}}
                                                 </mat-option>
                                         </mat-select>
-                                        <mat-error *ngIf="!!city.invalid && !!city.touched && !!city.errors.required">Please choose a city</mat-error>
+                                        <mat-error *ngIf="!!city.invalid && !!city.touched && !!city.errors.required">
+                                                Please choose a city
+                                        </mat-error>
                                         <div *ngIf="pub.city">
-                                                <mat-hint>Pedro</mat-hint>
+                                                <mat-hint>City is required</mat-hint>
                                         </div>
                                         
                                 </mat-form-field>  

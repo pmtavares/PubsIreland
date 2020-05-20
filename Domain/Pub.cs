@@ -10,7 +10,7 @@ namespace Domain
         public int Id { get; set; }
 
         [StringLength(100)]
-        [Required(ErrorMessage ="Name is required")]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
         [StringLength(1000)]
@@ -20,7 +20,7 @@ namespace Domain
         public string DescriptionDetailed { get; set; }
 
         [StringLength(100)]
-        [Required(ErrorMessage ="Address is required")]
+        [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
 
         public City City { get; set; }
@@ -38,5 +38,13 @@ namespace Domain
 
         public DateTime DateFounded { get; set; }
         public DateTime DateAdded { get; set; }
+
+        public string Username {get; set;}
+
+        public DateTime LastActive { get; set; }
+
+        public byte[] PasswordHash { get; set; }
+
+        public byte[] PasswordSalt { get; set; }
     }
 }

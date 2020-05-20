@@ -1,3 +1,18 @@
-<p>
-  pubs works!
-</p>
+<div class="my-container">
+  <div class="row">
+    <div class="col-lg-3 mt-3" *ngFor="let pub of pubs">
+        <div class="card" style="width: 18rem;">
+          <a [routerLink]="['/pubs/', pub.id]" title="Click to view details">
+              <img class="card-img-top card-image" [src]="pub.imagePath" alt="Click for details">
+          </a>  
+          
+            <div class="card-body">
+                <h5 class="card-title">{{pub.name}}</h5>
+                <p class="card-text address-text">{{pub.address}}, {{pub.city}}</p>
+                <p class="card-text date-founded-text">Founded: {{pub.dateFounded | date: "dd/MM/yyyy"}}</p>
+            </div>
+        </div>
+    </div>
+  </div>
+
+</div>

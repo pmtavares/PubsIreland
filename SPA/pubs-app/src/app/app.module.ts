@@ -29,10 +29,6 @@ import { PubsSearchComponent } from './components/pubs-search/pubs-search.compon
 import { PubsComponent } from './components/pubs/pubs.component';
 
 
-
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
