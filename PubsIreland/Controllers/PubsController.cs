@@ -14,8 +14,7 @@ namespace PubsIreland.Controllers
     [Route("api/[controller]")]
     [ApiController]
     [EnableCors("CorsPolicy")]
-    [Authorize]
-    public class PubsController : ControllerBase
+     public class PubsController : ControllerBase
     {
         private readonly IPubServices _services;
    

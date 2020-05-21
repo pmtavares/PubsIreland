@@ -1,0 +1,21 @@
+.login-container
+{
+    margin:auto; 
+    align-items: center;
+    width: 40%;
+
+}
+.card-login
+{
+    align-items: center;
+}
+.full-width
+{
+    width: 60%;
+    margin: auto;
+}
+.login-header
+{
+    margin: auto;
+
+}

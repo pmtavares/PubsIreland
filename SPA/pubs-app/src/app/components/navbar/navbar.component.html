@@ -7,11 +7,22 @@
           <a mat-button routerLink="about">About</a>
           <a mat-button [routerLink]="'pubs/search/'">Pubs</a>
           <a mat-button [routerLink]="'contact'">Contact</a>
-          <a mat-button [matMenuTriggerFor]="menu">Login</a>
-          <mat-menu #menu="matMenu">
-            <a mat-menu-item routerLink="login">Login</a>
-            <a mat-menu-item routerLink="pubs/register">Register</a>
-          </mat-menu>
+
+          <div class="loggedin-menu" *ngIf="loggedIn()">
+              <a mat-button [matMenuTriggerFor]="menu">User <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+              <mat-menu #menu="matMenu">
+                <a mat-menu-item routerLink="pubs/login">Profile</a>
+                <button mat-menu-item (click)="logout()">Logout</button>
+              </mat-menu>
+          </div>
+          <div class="loggedout-menu" *ngIf="!loggedIn()">
+              <a mat-button [matMenuTriggerFor]="menu">Signup</a>
+              <mat-menu #menu="matMenu">
+                <a mat-menu-item routerLink="pubs/login">Login</a>
+                <a mat-menu-item routerLink="pubs/register">Register</a>
+              </mat-menu>
+            </div>
+         
         </mat-toolbar-row>
       </mat-toolbar>
 </div>

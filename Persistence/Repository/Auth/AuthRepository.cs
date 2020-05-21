@@ -19,7 +19,7 @@ namespace Persistence.Repository.Auth
         {
             var pub = await _context.Pubs.FirstOrDefaultAsync(x => x.Username == username);
 
-            if(pub == null)
+            if(pub == null || pub.PasswordHash == null || pub.PasswordSalt == null)
             {
                 return null;
             }

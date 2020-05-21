@@ -7,17 +7,19 @@ import { PubDetailsComponent } from './components/pub-details/pub-details.compon
 import { PubRegisterComponent } from './components/pub-register/pub-register.component';
 import { PubsSearchComponent } from './components/pubs-search/pubs-search.component';
 import { PubsComponent } from './components/pubs/pubs.component';
+import { LoginComponent } from './components/login/login.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
   {path: "home", component:HomeComponent},
   {path: "about", component:AboutComponent},
   {path: "contact", component:ContactComponent},
+  {path: "pubs/login", component: LoginComponent},
   {path: "pubs/search", component:PubsComponent},
   {path: "pubs/search/cities/:city", component:PubsSearchComponent},
   {path: "pubs/register", component: PubRegisterComponent},
-
   {path: "pubs/:code", component: PubDetailsComponent},
+ 
 
 ];
 

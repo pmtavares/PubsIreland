@@ -27,6 +27,9 @@ import { PubRegisterComponent } from './components/pub-register/pub-register.com
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { PubsSearchComponent } from './components/pubs-search/pubs-search.component';
 import { PubsComponent } from './components/pubs/pubs.component';
+import { LoginComponent } from './components/login/login.component';
+import { AuthService } from './services/auth.service';
+import { ErrorInterceptorProvider } from './_config/errorInterceptor';
 
 
 @NgModule({
@@ -46,6 +49,7 @@ import { PubsComponent } from './components/pubs/pubs.component';
     NavbarComponent,
     PubsSearchComponent,
     PubsComponent,
+    LoginComponent,
 
   ],
   imports: [
@@ -61,7 +65,7 @@ import { PubsComponent } from './components/pubs/pubs.component';
   exports: [
 
   ],
-  providers: [PubsService, CitiesService],
+  providers: [ErrorInterceptorProvider, PubsService, CitiesService, AuthService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
