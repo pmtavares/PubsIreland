@@ -8,6 +8,7 @@ import { PubRegisterComponent } from './components/pub-register/pub-register.com
 import { PubsSearchComponent } from './components/pubs-search/pubs-search.component';
 import { PubsComponent } from './components/pubs/pubs.component';
 import { LoginComponent } from './components/login/login.component';
+import { AuthGuard } from './_guard/auth.guard';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -18,7 +19,7 @@ const routes: Routes = [
   {path: "pubs/search", component:PubsComponent},
   {path: "pubs/search/cities/:city", component:PubsSearchComponent},
   {path: "pubs/register", component: PubRegisterComponent},
-  {path: "pubs/:code", component: PubDetailsComponent},
+  {path: "pubs/:code", component: PubDetailsComponent, canActivate: [AuthGuard]},
  
 
 ];

@@ -20,7 +20,7 @@ export class PubListCityComponent implements OnInit {
   getCities()
   {
     return this.services.getCities().subscribe(
-      response => {console.log(response); this.cities = response.sort((a,b)=> (a.name > b.name)?1:-1)}, //Sort fields
+      response => {this.cities = response.sort((a,b)=> (a.name > b.name)?1:-1)}, //Sort fields
       error=> console.log(error)
     )
   }

@@ -35,3 +35,7 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 * Ngx-Bootstrap: ng add ngx-bootstrap@5.6.1
 * MDB Angular: npm install angular-bootstrap-md@9.3.0
 * npm install -–save chart.js@2.5.0 @types/chart.js @fortawesome/fontawesome-free hammerjs animate.css
+* Angular Jwt: npm i @auth0/angular-jwt@3.0.0
+
+* Alertify Js: npm install alertifyjs@1.13.1: 
+    Include the css path in styles.css

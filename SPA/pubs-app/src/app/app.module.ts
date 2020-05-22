@@ -30,6 +30,7 @@ import { PubsComponent } from './components/pubs/pubs.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { ErrorInterceptorProvider } from './_config/errorInterceptor';
+import {JwtModule} from '@auth0/angular-jwt';
 
 
 @NgModule({
@@ -59,13 +60,24 @@ import { ErrorInterceptorProvider } from './_config/errorInterceptor';
     BrowserAnimationsModule,
     CarouselModule,
     AngularMaterialModule,
-    FormsModule
+    FormsModule,
+    JwtModule.forRoot({
+      config:{
+        tokenGetter: () => { return localStorage.getItem('token') },
+        whitelistedDomains: ["localhost:5000"],
+        blacklistedRoutes: ['localhost:5000/api/auth']
+      }
+    })
 
   ],
   exports: [
 
   ],
-  providers: [ErrorInterceptorProvider, PubsService, CitiesService, AuthService, ],
+  providers: [
+    ErrorInterceptorProvider, 
+    PubsService, 
+    CitiesService, 
+    AuthService, ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

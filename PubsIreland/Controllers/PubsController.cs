@@ -36,6 +36,7 @@ namespace PubsIreland.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize]
         public async Task<IActionResult> GetPubById(int id)
         {
             var pub = await _services.GetPubById(id);
