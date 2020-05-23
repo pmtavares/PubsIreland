@@ -24,5 +24,7 @@ namespace Application.Services
         Task<PubDto> RegisterPubAsync(PubDtoForCreation dto);
 
         Task<string> Login(string username, string password);
+
+        Task<PubDto> UpdatePub(PubDtoUpdate pub);
     }
 }

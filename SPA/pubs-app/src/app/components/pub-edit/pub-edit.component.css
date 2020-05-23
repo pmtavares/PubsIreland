@@ -1,0 +1,25 @@
+.edit-form
+{
+    width: 60%;
+    margin: auto;
+}
+.full-width
+{
+    width: 95%;
+    margin-left: 1em;
+}
+.half-width-wrapper
+{
+    width: 100%;
+}
+.half-width
+{
+    width: 40%;
+    margin-left: 1em;
+}
+.thirdth-width
+{
+    width: 25%;
+    margin-left: 1em;
+    margin-right: 3em;
+}

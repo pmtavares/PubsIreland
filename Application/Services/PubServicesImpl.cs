@@ -9,6 +9,7 @@ using Application.Dtos;
 using AutoMapper;
 using Domain;
 using Infrastructured.Errors;
+using Infrastructured.Security;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
@@ -24,10 +25,11 @@ namespace Application.Services
         private readonly IAuthRepository _authRepository;
         private readonly ICityRepository _cityRepository;
         private readonly IConfiguration _config;
+        private readonly IUserAccessor _userAccessor;
 
         private readonly ILogger _logger;
         private readonly IMapper _mapper;
-        public PubServicesImpl(IPubRepository repository, ILogger<Pub> logger, 
+        public PubServicesImpl(IPubRepository repository, ILogger<Pub> logger, IUserAccessor userAccessor,
                     IMapper mapper, ICityRepository city, IAuthRepository authRep, IConfiguration  config)
         {
             _repository = repository;
@@ -36,6 +38,7 @@ namespace Application.Services
             _mapper = mapper;
             _authRepository = authRep;
             _config = config;
+            _userAccessor = userAccessor;
 
 
         }
@@ -201,6 +204,43 @@ namespace Application.Services
             var token = tokenHandler.CreateToken(tokenDescriptor);
 
             return tokenHandler.WriteToken(token);
+        }
+
+        public async Task<PubDto> UpdatePub(PubDtoUpdate dto)
+        {
+            var userId = _userAccessor.GetCurrentUsername();
+
+            if(userId == null)
+            {
+                throw new RestExceptions(HttpStatusCode.NotAcceptable, new { User = "Bad user, please login first" });
+            }
+
+            if (dto == null)
+            {
+                throw new RestExceptions(HttpStatusCode.BadRequest, new { Pub = "Bad Request" });
+            }
+
+            var userFromRepo = await _repository.GetPubById(dto.Id);
+
+
+            if(int.Parse(userId) != userFromRepo.Id)
+            {
+                throw new RestExceptions(HttpStatusCode.Unauthorized, new { Pub = "You cannot modify" });
+            }
+
+            _mapper.Map(dto, userFromRepo);
+            var sucess = await _repository.UpdatePub(userFromRepo);
+
+            if (sucess)
+            {
+                var result = _mapper.Map<Pub, PubDto>(userFromRepo);
+
+                return result;
+            }
+    
+
+            throw new RestExceptions(HttpStatusCode.NotModified, new { Pub = $"Updating pub {dto.Id} failed" });
+            
         }
     }
 }

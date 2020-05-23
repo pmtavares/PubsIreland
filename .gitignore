@@ -72,3 +72,12 @@ appsettings.json
 /PubsIreland/bin/Debug/netcoreapp2.2/Infrastructured.pdb
 /PubsIreland/bin/Debug/netcoreapp2.2/Domain.pdb
 /PubsIreland/bin/Debug/netcoreapp2.2/Application.pdb
+Domain/bin/Debug/netcoreapp2.2/Domain.pdb
+Domain/obj/Debug/netcoreapp2.2/Domain.pdb
+Infrastructured/bin/Debug/netcoreapp2.2/Infrastructured.dll
+Infrastructured/bin/Debug/netcoreapp2.2/Infrastructured.pdb
+Infrastructured/obj/Debug/netcoreapp2.2/Infrastructured.dll
+Persistence/bin/Debug/netcoreapp2.2/Domain.pdb
+
+Infrastructured/obj/Debug/netcoreapp2.2/
+

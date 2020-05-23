@@ -55,6 +55,11 @@ export class PubsService implements OnInit{
     return this.http.post(this.baseUrl + "/register", pub)
   }
 
+  updatePub(pub:IPub)
+  {
+    return this.http.put(this.baseUrl + "/update", pub);
+  }
+
   private handleError(err: HttpErrorResponse)
   {
     let errorMessage;

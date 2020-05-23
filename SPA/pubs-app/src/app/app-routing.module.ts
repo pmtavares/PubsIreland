@@ -9,6 +9,7 @@ import { PubsSearchComponent } from './components/pubs-search/pubs-search.compon
 import { PubsComponent } from './components/pubs/pubs.component';
 import { LoginComponent } from './components/login/login.component';
 import { AuthGuard } from './_guard/auth.guard';
+import { PubEditComponent } from './components/pub-edit/pub-edit.component';
 
 const routes: Routes = [
   {path: "", component:HomeComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path: "pubs/search", component:PubsComponent},
   {path: "pubs/search/cities/:city", component:PubsSearchComponent},
   {path: "pubs/register", component: PubRegisterComponent},
+  {path: "pubs/update", component: PubEditComponent, canActivate: [AuthGuard]},
   {path: "pubs/:code", component: PubDetailsComponent, canActivate: [AuthGuard]},
+  
  
 
 ];

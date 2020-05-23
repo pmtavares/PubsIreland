@@ -11,7 +11,7 @@
           <div class="loggedin-menu" *ngIf="loggedIn()">
               <a mat-button [matMenuTriggerFor]="menu">{{userName | titlecase}} <i class="fa fa-caret-down" aria-hidden="true"></i></a>
               <mat-menu #menu="matMenu">
-                <a mat-menu-item routerLink="pubs/login">Profile</a>
+                <a mat-menu-item routerLink="pubs/update">Profile</a>
                 <button mat-menu-item (click)="logout()">Logout</button>
               </mat-menu>
           </div>

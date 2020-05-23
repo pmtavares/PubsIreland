@@ -68,6 +68,19 @@ namespace Persistence.Repository.Pubs
             return  await _context.SaveChangesAsync() > 0;
         }
 
-     
+        public async Task<bool> UpdatePub(Pub pub)
+        {
+            try
+            {
+                _context.Pubs.Update(pub);
+                var success = await _context.SaveChangesAsync() > 0;
+                return success;
+            }
+            catch(Exception ex)
+            {
+                throw ex;
+            }
+
+        }
     }
 }

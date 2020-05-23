@@ -7,9 +7,11 @@ using Application.Configurations;
 using Application.Services;
 using AutoMapper;
 using Infrastructured.Errors;
+using Infrastructured.Security;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -80,7 +82,8 @@ namespace PubsIreland
             services.AddScoped<ICityServices, CityServicesImpl>();
             services.AddScoped<ICityRepository, CityRepository>();
             services.AddScoped<IAuthRepository, AuthRepository>();
-
+            services.AddHttpContextAccessor();
+            services.AddScoped<IUserAccessor, UserAccessor>();
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2)

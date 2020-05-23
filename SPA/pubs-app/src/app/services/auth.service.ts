@@ -11,11 +11,11 @@ export class AuthService implements OnInit {
   baseUrl =  "http://localhost:5000/api/pubs/";
   jwtHelper = new JwtHelperService();
   decodedToken: any;
-
+  
   constructor(private http: HttpClient) { }
 
-  ngOnInit(): void {
-    throw new Error("Method not implemented.");
+  ngOnInit() {
+   
   }
 
   /*
@@ -32,7 +32,6 @@ export class AuthService implements OnInit {
           {
             localStorage.setItem("token", user.token);
             this.decodedToken = this.jwtHelper.decodeToken(user.token);
-            
             return user.token;
           }
         })
@@ -52,6 +51,22 @@ export class AuthService implements OnInit {
 
   getLoggedUsername()
   {
-    return this.jwtHelper.decodeToken(localStorage.getItem('token')).unique_name;
+      const decodedToken = this.jwtHelper.decodeToken(localStorage.getItem('token'));
+      if(decodedToken)
+      {
+        return decodedToken.unique_name;
+      }
+   
   }
+
+  getLoggedUsernameId()
+  {
+    const decodedToken = this.jwtHelper.decodeToken(localStorage.getItem('token'));
+    if(decodedToken)
+    {
+      return decodedToken.nameid;
+    }
+  }
+
+ 
 }

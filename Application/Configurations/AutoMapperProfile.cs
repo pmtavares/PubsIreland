@@ -17,7 +17,9 @@ namespace Application.Configurations
                 .ForMember(dest => dest.City, opt => opt.MapFrom(src => src.City.Name));
 
             CreateMap<Pub, PubDtoForCreation>().ReverseMap();
- 
+
+            CreateMap<Pub, PubDtoUpdate>().ReverseMap();
+
 
 
         }

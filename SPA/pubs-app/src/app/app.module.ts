@@ -31,6 +31,7 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { ErrorInterceptorProvider } from './_config/errorInterceptor';
 import {JwtModule} from '@auth0/angular-jwt';
+import { PubEditComponent } from './components/pub-edit/pub-edit.component';
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import {JwtModule} from '@auth0/angular-jwt';
     PubsSearchComponent,
     PubsComponent,
     LoginComponent,
+    PubEditComponent,
 
   ],
   imports: [

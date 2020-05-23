@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  userName: string = "";
+  userName: string;
   constructor(private authService: AuthService, private router: Router, private alertify: AlertifyService) { }
 
   ngOnInit() {
@@ -19,6 +19,7 @@ export class NavbarComponent implements OnInit {
 
   loggedIn()
   {
+    this.setUsername();
     return this.authService.loggedIn();
   }
 

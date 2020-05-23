@@ -87,5 +87,13 @@ namespace PubsIreland.Controllers
             return Ok(new { token = pubToken});
         }
 
+        [HttpPut("update")]
+        [Authorize]
+        public async Task<IActionResult> UpdatePub(PubDtoUpdate pub)
+        {
+            var pubUpdated = await _services.UpdatePub(pub);
+            return Ok(pubUpdated);
+        }
+
     }
 }
