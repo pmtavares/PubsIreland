@@ -10,18 +10,25 @@ import { IPub } from 'src/app/models/pub';
 export class PubsComponent implements OnInit {
 
   pubs: IPub[] = [];
+  loading: boolean = true;
 
   constructor(private pubService: PubsService) { }
 
   ngOnInit() {
-    this.getPubs(5);
+    this.getPubs(8);
   }
 
   getPubs(pubs: number)
   {
     this.pubService.getPubsNumber(pubs).subscribe(
-      data => this.pubs = data,
-      error => console.log(error)
+      data => {
+        this.pubs = data;
+        this.loading = false;
+      },
+      error => {
+        console.log(error);
+        this.loading = false;
+      }
     )
   }
 

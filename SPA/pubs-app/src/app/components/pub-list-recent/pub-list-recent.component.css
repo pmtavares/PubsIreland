@@ -4,6 +4,10 @@
 }
 .pub-image
 {
-    width: 120px;
-    height: 120px;
+    width: 99%;
+    height: 6em;
+}
+.title-recent
+{
+    color: #3b5e08
 }

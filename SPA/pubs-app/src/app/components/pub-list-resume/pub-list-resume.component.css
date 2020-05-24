@@ -2,7 +2,8 @@
 {
     width: 90%;
     margin: auto;
-    
+    margin-top: 5%;
+    background: transparent
 }
 .side-container
 {
@@ -25,4 +26,13 @@
 {
     width: 80%;
     margin-right: 0;
+}
+.pub-name-title
+{
+    color: #2f4908
+}
+.card-list
+{
+    display: flex;
+    flex-direction: row;
 }

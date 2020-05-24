@@ -11,6 +11,7 @@ import { IPub } from 'src/app/models/pub';
 export class PubDetailsComponent implements OnInit {
 
   pubDetails: IPub | undefined;
+  loading: boolean = true;
 
   constructor(private pubService: PubsService, private route: ActivatedRoute) { }
 
@@ -23,8 +24,14 @@ export class PubDetailsComponent implements OnInit {
     let code: string = this.route.snapshot.paramMap.get('code');
 
     this.pubService.getPubDetail(code).subscribe(
-      response=> this.pubDetails = response,
-      error => console.log(error)
+      response=> {
+        this.pubDetails = response,
+        this.loading = false
+      },
+      error => {
+        console.log(error),
+        this.loading = false
+      }
     )    
   }
 

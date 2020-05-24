@@ -1,3 +1,12 @@
+.edit-profile-container
+{
+    width: 90%;
+    margin: auto;
+    margin-top: 5em;
+    min-height: 50em;
+    margin-bottom: 20px;
+
+}
 .edit-form
 {
     width: 60%;
@@ -7,6 +16,7 @@
 {
     width: 95%;
     margin-left: 1em;
+    margin-bottom: 1em;
 }
 .half-width-wrapper
 {
@@ -16,10 +26,12 @@
 {
     width: 40%;
     margin-left: 1em;
+    margin-bottom: 1em;
 }
 .thirdth-width
 {
     width: 25%;
     margin-left: 1em;
     margin-right: 3em;
+    margin-bottom: 1em;
 }

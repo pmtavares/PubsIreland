@@ -1,0 +1,10 @@
+<div class="overlay" *ngIf="loading">
+    <mat-spinner 
+        [diameter]="diameter" 
+        style="margin:0 auto;" class="spiner-class"
+        [strokeWidth] = "strokeWidth"
+        [value]="value"      
+        loading="isLoading"
+        >
+    </mat-spinner>
+</div>

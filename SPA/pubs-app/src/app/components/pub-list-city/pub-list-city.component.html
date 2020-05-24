@@ -1,8 +1,10 @@
-<mat-nav-list>
-    <div mat-subheader>Search by city</div>
-    <mat-list-item *ngFor="let city of cities">
-        <a matLine [routerLink]="['/pubs/search/cities/', city.name]">{{ city.name}} - {{city.county}}</a>
-        <button mat-icon-button (click)={}>
-        </button>
-    </mat-list-item>
-</mat-nav-list>
+<div class="col-lg-12 col-md-12">
+    <mat-nav-list>
+        <div mat-subheader>Search by city</div>
+        <mat-list-item *ngFor="let city of cities">
+            <a  [routerLink]="['/pubs/search/cities/', city.name]">{{ city.name}} - {{city.county}}</a>
+            <button mat-icon-button (click)={}>
+            </button>
+        </mat-list-item>
+    </mat-nav-list>
+</div>

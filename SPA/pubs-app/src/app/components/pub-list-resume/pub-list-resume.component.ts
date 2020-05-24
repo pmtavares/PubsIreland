@@ -10,6 +10,7 @@ import { PubsService } from 'src/app/services/pubs.service';
 export class PubListResumeComponent implements OnInit {
 
   pubs: IPub[] = []
+  loading: boolean = true;
 
   constructor(private pubService: PubsService) { }
 
@@ -20,8 +21,14 @@ export class PubListResumeComponent implements OnInit {
   getPubsByNumber(total: number)
   {
     this.pubService.getPubsNumber(total).subscribe(
-      response => this.pubs = response,
-      error => console.log(error)
+      response => {
+        this.pubs = response
+        this.loading = false
+      },
+      error => {
+        console.log(error),
+        this.loading = false
+      }
     )
   }
 

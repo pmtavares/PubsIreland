@@ -41,7 +41,6 @@ export class PubRegisterComponent implements OnInit {
   }
   registerPub()
   {
-    console.log(this.pub)
     this.pubService.registerPub(this.pub).subscribe(()=> {
       console.log("Success");
       this.router.navigate(['home'])

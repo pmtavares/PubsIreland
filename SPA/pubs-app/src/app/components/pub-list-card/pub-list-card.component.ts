@@ -10,6 +10,8 @@ import { IPub } from 'src/app/models/pub';
 export class PubListCardComponent implements OnInit {
 
   pubs: IPub[];
+  loading: boolean = true;
+
   constructor(private pubService: PubsService) { }
 
   ngOnInit() {
@@ -19,8 +21,15 @@ export class PubListCardComponent implements OnInit {
   getPubs(total: number)
   {
     this.pubService.getPubsNumber(total).subscribe(
-      data => this.pubs = data,
-      error => console.log(error) 
+      data => {
+        this.pubs = data,
+        this.loading = false
+      },
+      error => 
+      { 
+        console.log(error),
+        this.loading = false
+      }
     )
   }
 

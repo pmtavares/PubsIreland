@@ -10,6 +10,7 @@ import { IPub } from 'src/app/models/pub';
 export class PubsListCarouselComponent implements OnInit {
   
   pubs: IPub[];
+  loading: boolean = true;
 
   constructor(private pubService: PubsService) { }
 
@@ -20,8 +21,14 @@ export class PubsListCarouselComponent implements OnInit {
   getPubs()
   {
     this.pubService.getOldestPubs(3).subscribe(
-      data => this.pubs = data,
-      error => console.log(error)
+      data => {
+        this.pubs = data,
+        this.loading = false
+      },
+      error => {
+        console.log(error),
+        this.loading = false
+      }
     )
   }
 

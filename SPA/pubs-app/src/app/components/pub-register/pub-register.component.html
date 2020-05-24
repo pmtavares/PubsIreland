@@ -40,11 +40,7 @@
                                         </mat-select>
                                         <mat-error *ngIf="!!city.invalid && !!city.touched && !!city.errors.required">
                                                 Please choose a city
-                                        </mat-error>
-                                        <div *ngIf="pub.city">
-                                                <mat-hint>City is required</mat-hint>
-                                        </div>
-                                        
+                                        </mat-error>                                        
                                 </mat-form-field>  
                                 <mat-form-field class="thirdth-width">
                                         <mat-label>Phone Number</mat-label>
@@ -53,8 +49,10 @@
                                 </mat-form-field>  
                                 <mat-form-field class="thirdth-width">
                                         <mat-label>Date founded</mat-label>
-                                        <input matInput name="dateFounded" required
+                                        <input matInput name="dateFounded" required [matDatepicker]="picker"
                                                 [(ngModel)]="pub.dateFounded" placeholder="Ex. 01/01/2020" >
+                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                        <mat-datepicker #picker></mat-datepicker>
                                 </mat-form-field>  
                         </div>
 

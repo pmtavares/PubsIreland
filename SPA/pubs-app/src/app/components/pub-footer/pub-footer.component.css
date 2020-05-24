@@ -4,26 +4,39 @@
     src: url("../../../assets/fonts/Kenia-Regular.ttf")
 }
 
-.myContainer
+.footer-container
 {
     margin-top: 50px;
     width: 99%;
     margin: auto;
     color: white;
 }
-.myContainer a{
+.footer-container a{
     text-decoration: none;
-    color: #e3e2e2;
+    color: white;
 }
+
+
 .footer-header
 {
-    background-color: #616161; 
+     /*height: fit-content;
+    width: fit-content;
+   background-color: #616161; */
+   background: rgb(59,94,8);
+   background: linear-gradient(90deg, rgba(59,94,8,1) 0%, rgba(70,110,9,1) 50%, rgba(109,173,13,1) 100%);
+   color: white;
 }
+
 .footer-bottom{
-    background-color: #424242
+    /*height: fit-content;  */
+    background-color: #2f4908
 }
 .footer-bottom-text
 {
     font-size: small;
-    color: #e3e2e2
+    color: white
+}
+.tooltip-white
+{
+    background: white
 }

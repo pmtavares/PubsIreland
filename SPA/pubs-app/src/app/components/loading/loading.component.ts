@@ -1,0 +1,23 @@
+import { Component, OnInit, Input } from '@angular/core';
+
+@Component({
+  selector: 'app-loading',
+  templateUrl: './loading.component.html',
+  styleUrls: ['./loading.component.css']
+})
+export class LoadingComponent implements OnInit {
+
+  @Input() value: number = 100;
+  @Input() diameter: number = 60;
+  @Input() strokeWidth : number = 8;
+  @Input() loading: boolean = true;
+
+  constructor() { }
+
+  ngOnInit() {
+
+  }
+
+  
+
+}

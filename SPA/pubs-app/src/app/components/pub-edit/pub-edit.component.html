@@ -1,24 +1,25 @@
-<div class="my-container">
+<div class="edit-profile-container">
+        <mat-card>
   <div class="edit-form">
           <div class="row justify-content-center mb-5"><h3>Edit Profile</h3></div>
           <form #editForm="ngForm" (ngSubmit)="editPub()" *ngIf="pub">
                   <div class="row">
-                          <mat-form-field  class="half-width">
-                                  <mat-label>Pub's name</mat-label>
-                                  <input matInput placeholder="Ex. My Irish pub" required
-                                          name="name"  [(ngModel)]="pub.name" #name="ngModel"
-                                  > 
-                                  <mat-error *ngIf="!!name.invalid && name.touched && !!name.errors.required">
-                                          Pub's name is required
-                                  </mat-error>  
-                                          
-                          </mat-form-field>  
+                        <mat-form-field  class="half-width">
+                                <mat-label>Pub's name</mat-label>
+                                <input matInput placeholder="Ex. My Irish pub" required
+                                        name="name"  [(ngModel)]="pub.name" #name="ngModel"
+                                > 
+                                <mat-error *ngIf="!!name.invalid && name.touched && !!name.errors.required">
+                                        Pub's name is required
+                                </mat-error>  
+                                        
+                        </mat-form-field>  
 
-                          <mat-form-field class="half-width" >
-                                  <mat-label>Website</mat-label>
-                                  <input matInput name="website" [(ngModel)]="pub.website" >
-                                  
-                          </mat-form-field>        
+                        <mat-form-field class="half-width" >
+                                <mat-label>Website</mat-label>
+                                <input matInput name="website" [(ngModel)]="pub.website" >
+                                
+                        </mat-form-field>        
                   </div>
                   <div class="row">
                           <mat-form-field class="full-width">
@@ -96,5 +97,5 @@
                 
           </form>
   </div>        
- 
+</mat-card>
 </div>

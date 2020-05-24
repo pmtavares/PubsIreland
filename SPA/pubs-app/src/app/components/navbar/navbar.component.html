@@ -1,23 +1,25 @@
 <div>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="menu-tab">
         <mat-toolbar-row>
-          <span><img src="assets/images/logo/logo.png" class="logo-image ml-4" /></span>
+          <span><img src="assets/images/logo/logo5.png" class="logo-image ml-4" /></span>
           <div class="menu-spacer"></div>
-          <a mat-button routerLink="home">Home</a>
-          <a mat-button routerLink="about">About</a>
-          <a mat-button [routerLink]="'pubs/search/'">Pubs</a>
-          <a mat-button [routerLink]="'contact'">Contact</a>
-
-          <div class="loggedin-menu" *ngIf="loggedIn()">
-              <a mat-button [matMenuTriggerFor]="menu">{{userName | titlecase}} <i class="fa fa-caret-down" aria-hidden="true"></i></a>
+          <mat-nav-list class="main-menu-list">              
+              <a mat-menu-item routerLink="home">Home</a>
+              <a mat-menu-item routerLink="about">About</a>
+              <a mat-menu-item [routerLink]="'pubs/search/'">Pubs</a>
+              <a mat-menu-item [routerLink]="'contact'">Contact</a>
+            </mat-nav-list>
+          <div class="sub-menu-list mt-2" *ngIf="loggedIn()">
+              <a mat-button [matMenuTriggerFor]="menu">{{userName | titlecase}} 
+                <i class="fa fa-caret-down" aria-hidden="true"></i></a>
               <mat-menu #menu="matMenu">
                 <a mat-menu-item routerLink="pubs/update">Profile</a>
                 <button mat-menu-item (click)="logout()">Logout</button>
               </mat-menu>
           </div>
-          <div class="loggedout-menu" *ngIf="!loggedIn()">
+          <div class="sub-menu-list mt-2" *ngIf="!loggedIn()">
               <a mat-button [matMenuTriggerFor]="menu">Signup</a>
-              <mat-menu #menu="matMenu">
+              <mat-menu #menu="matMenu" >
                 <a mat-menu-item routerLink="pubs/login">Login</a>
                 <a mat-menu-item routerLink="pubs/register">Register</a>
               </mat-menu>
