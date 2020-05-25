@@ -69,10 +69,8 @@
             </div>
             <mat-divider></mat-divider>
             <div class="col-lg-12 mt-3">
-                <div class="row">
-                        <mat-icon class="icon-contact">room</mat-icon>
-                        <h3>Find location </h3>
-                </div>
+
+                <app-pub-map [name]="pubDetails.name" [address]="pubDetails.address"></app-pub-map>
                
             </div>
         </div>

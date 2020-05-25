@@ -39,3 +39,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 * Alertify Js: npm install alertifyjs@1.13.1: 
     Include the css path in styles.css
+
+* Map: npm i @angular/google-maps@9.2.4 

@@ -2,6 +2,7 @@ import { Injectable, OnInit } from '@angular/core';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http'
 import { IPub } from '../models/pub';
 import { Observable, throwError } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +10,7 @@ import { Observable, throwError } from 'rxjs';
 
 export class PubsService implements OnInit{
   
-  baseUrl = "http://localhost:5000/api/pubs";
+  private baseUrl = environment.apiUrl;
 
   constructor(private http: HttpClient) { }
 

@@ -1,0 +1,28 @@
+<div class="row">
+    <mat-icon class="icon-contact">room</mat-icon>
+    <h3 class="mb-6">Find location </h3>
+
+        <google-map width="400" height="300"
+          [zoom]="zoom"
+          [center]="center"
+          [options]="options"
+          (mapClick)="click($event)"
+          (mapMouseout)="mouseOut($event)"
+          (mapMouseover)="mouseIn($event)"
+        >
+          <map-marker
+            #markerElem
+            [position]="marker.position"
+            [label]="marker.label"
+            [title]="marker.title"
+            [options]="marker.options"
+            (mapClick)="openInfo(markerElem, marker.info)"
+          >
+
+          </map-marker>
+          <map-info-window>{{address}}</map-info-window>
+        </google-map>
+
+</div>
+
+
