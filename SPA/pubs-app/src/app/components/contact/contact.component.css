@@ -1,9 +1,33 @@
 .my-container
 {
     min-height: 40em;
-    width: 90%;
+    width: 80%;
     margin: auto;
     margin-top: 3em;
     margin-bottom: 4em;
 
+}
+.contact-box
+{
+    background: rgb(59,94,8);
+    background: linear-gradient(180deg, rgba(59,94,8,1) 0%, rgba(70,110,9,1) 50%, rgba(109,173,13,1) 100%);
+    color: #F5F5F5;
+    width: 90%;
+    margin: auto;
+    min-height: 30em;
+
+}
+.fa
+{
+    color: #2f4908;
+ 
+}
+.icon-box
+{
+    height: 6em;
+    width: 25%;
+    background-color: #bbb;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 5%;
 }

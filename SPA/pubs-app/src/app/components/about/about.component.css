@@ -1,8 +1,16 @@
 .myContainer
 {
     min-height: 40em;
-    width: 90%;
+    width: 60%;
     margin: auto;
     margin-top: 3em;
     margin-bottom: 4em;
+}
+.about-title
+{
+    color: #2f4908
+}
+.about-text
+{
+    color: #616161
 }

@@ -64,6 +64,13 @@ namespace PubsIreland.Controllers
             return Ok(pubs);
         }
 
+        [HttpGet("youngest/{total}")]
+        public async Task<IActionResult> GetYoungestPubs(int total)
+        {
+            var pubs = await _services.GetYoungestPubs(total);
+            return Ok(pubs);
+        }
+
 
         [HttpGet("recent/{total}")]
         public async Task<IActionResult> GetRecentAdded(int total)

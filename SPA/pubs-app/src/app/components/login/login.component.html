@@ -15,7 +15,7 @@
             <div class="row">
                 <mat-form-field class="full-width">
                     <mat-label>Username</mat-label>
-                    <input matInput placeholder="Username" name="username" #username="ngModel"
+                    <input matInput placeholder="Username. Ex: brass" name="username" #username="ngModel"
                             required  
                             [(ngModel)]="model.username">
 
@@ -26,7 +26,7 @@
                 <mat-form-field class="full-width">
                     <mat-label>Password</mat-label>
                     <input matInput type="password" [(ngModel)]="model.password"
-                        placeholder="Password" name="password" #password="ngModel" required>  
+                        placeholder="Password. Ex: password" name="password" #password="ngModel" required>  
                     <mat-error *ngIf="!password.valid && password.touched && password.errors.required">Password is required</mat-error>      
                   </mat-form-field>
             </div>

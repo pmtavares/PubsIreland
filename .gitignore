@@ -81,3 +81,5 @@ Persistence/bin/Debug/netcoreapp2.2/Domain.pdb
 
 Infrastructured/obj/Debug/netcoreapp2.2/
 
+SPA/pubs-app/src/environments/environment.ts
+wwwroot/

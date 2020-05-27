@@ -4,6 +4,7 @@ export interface IPub
 {
     id: number;
     name: string;
+    username: string;
     description: string;
     descriptionDetailed: string;
     address: string;

@@ -3,6 +3,7 @@ import { PubsService } from 'src/app/services/pubs.service';
 import { IPub } from 'src/app/models/pub';
 import { ICity } from 'src/app/models/city';
 import { AuthService } from 'src/app/services/auth.service';
+import { AlertifyService } from 'src/app/services/alertify.service';
 import { CitiesService } from 'src/app/services/cities.service';
 import { Router } from '@angular/router';
 
@@ -15,9 +16,10 @@ export class PubEditComponent implements OnInit {
 
   pub: IPub;
   cities: ICity[];
+  loading: boolean = true;
 
   constructor(private pubService: PubsService, private cityService: CitiesService, 
-            private authService: AuthService, private router: Router) { }
+            private authService: AuthService, private router: Router, private alertify: AlertifyService) { }
 
   ngOnInit() {
     this.getCities();
@@ -29,10 +31,11 @@ export class PubEditComponent implements OnInit {
   {
     this.pubService.updatePub(this.pub).subscribe(
       () => {
-        console.log("Success updated")
+        this.alertify.success("Success updated")
         this.router.navigate(['home'])
       },
       error => {
+        this.alertify.error(error)
         console.log(error)
       }
     )
@@ -48,8 +51,12 @@ export class PubEditComponent implements OnInit {
     this.pubService.getPubDetail(pubId).subscribe(
        data => {
          this.pub = data;
+         this.loading = false
        },
-       error => console.log(error)
+       error => {
+         console.log(error)
+         this.loading = false
+       }
      )
   }
 

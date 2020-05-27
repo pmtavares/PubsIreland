@@ -3,88 +3,137 @@
                 <div class="row justify-content-center mb-5"><h3>Register Form</h3></div>
                 <form #registerForm="ngForm" (ngSubmit)="registerPub()">
                         <div class="row">
-                                <mat-form-field  class="half-width">
-                                        <mat-label>Pub's name</mat-label>
-                                        <input matInput placeholder="Ex. My Irish pub" required
-                                                name="name"  [(ngModel)]="pub.name" #name="ngModel"
-                                        > 
-                                        <mat-error *ngIf="!!name.invalid && name.touched && !!name.errors.required">
-                                                Pub's name is required
-                                        </mat-error>  
-                                                
-                                </mat-form-field>  
-
-                                <mat-form-field class="half-width" >
-                                        <mat-label>Website</mat-label>
-                                        <input matInput name="website" [(ngModel)]="pub.website" >
-                                        
-                                </mat-form-field>        
+                                <div class="col-lg-6 align-items-start">
+                                        <mat-form-field  class="full-width">
+                                                <mat-label>Pub's name</mat-label>
+                                                <input matInput placeholder="Ex. My Irish pub" required
+                                                        name="name"  [(ngModel)]="pub.name" #name="ngModel"
+                                                > 
+                                                <mat-error *ngIf="!!name.invalid && name.touched && !!name.errors.required">
+                                                        Pub's name is required
+                                                </mat-error>  
+                                                        
+                                        </mat-form-field>  
+                                </div>
+                                <div class="col-lg-6 align-items-start">
+                                        <mat-form-field class="full-width" >
+                                                        <mat-label>Website</mat-label>
+                                                        <input matInput name="website" [(ngModel)]="pub.website" >
+                                                        
+                                        </mat-form-field>   
+                                </div>
+                               
+     
                         </div>
                         <div class="row">
-                                <mat-form-field class="full-width">
-                                        <mat-label>Address</mat-label>
-                                        <input matInput name="address" #address="ngModel"
-                                        [(ngModel)]="pub.address" required>
-                                        <mat-error *ngIf="!!address.invalid && address.touched && !!address.errors.required">
-                                                        Address is required
-                                        </mat-error>  
-                                </mat-form-field>   
+                                <div class="col-lg-12 align-items-start">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Address</mat-label>
+                                                <input matInput name="address" #address="ngModel"
+                                                [(ngModel)]="pub.address" required>
+                                                <mat-error *ngIf="!!address.invalid && address.touched && !!address.errors.required">
+                                                                Address is required
+                                                </mat-error>  
+                                        </mat-form-field>
+                                </div>
                         </div>
                         <div class="row">
-                                <mat-form-field class="thirdth-width">
-                                        <mat-label>City</mat-label>
-                                        <mat-select  [(ngModel)]="pub.cityId" required #city="ngModel" name="city">
-                                                <mat-option *ngFor="let city of cities"[value]="city.id">
-                                                        {{city.name}}
-                                                </mat-option>
-                                        </mat-select>
-                                        <mat-error *ngIf="!!city.invalid && !!city.touched && !!city.errors.required">
-                                                Please choose a city
-                                        </mat-error>                                        
-                                </mat-form-field>  
-                                <mat-form-field class="thirdth-width">
-                                        <mat-label>Phone Number</mat-label>
-                                        <input matInput name="phoneNumber" required [(ngModel)]="pub.phoneNumber" 
-                                                placeholder="Ex. 01 1234567" >
-                                </mat-form-field>  
-                                <mat-form-field class="thirdth-width">
-                                        <mat-label>Date founded</mat-label>
-                                        <input matInput name="dateFounded" required [matDatepicker]="picker"
-                                                [(ngModel)]="pub.dateFounded" placeholder="Ex. 01/01/2020" >
-                                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                        <mat-datepicker #picker></mat-datepicker>
-                                </mat-form-field>  
+                                <div class="col-lg-4 align-items-start">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>City</mat-label>
+                                                <mat-select  [(ngModel)]="pub.cityId" required #city="ngModel" name="city">
+                                                        <mat-option *ngFor="let city of cities"[value]="city.id">
+                                                                {{city.name}}
+                                                        </mat-option>
+                                                </mat-select>
+                                                <mat-error *ngIf="!!city.invalid && !!city.touched && !!city.errors.required">
+                                                        Please choose a city
+                                                </mat-error>                                        
+                                        </mat-form-field> 
+                                </div>
+                                <div class="col-lg-4 align-items-start"> 
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Phone Number</mat-label>
+                                                <input matInput name="phoneNumber" required [(ngModel)]="pub.phoneNumber" 
+                                                        placeholder="Ex. 01 1234567" >
+                                        </mat-form-field> 
+                                </div>
+                                <div class="col-lg-4 align-items-end">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Date founded</mat-label>
+                                                <input matInput name="dateFounded" required [matDatepicker]="picker"
+                                                        [(ngModel)]="pub.dateFounded" placeholder="Ex. 01/01/2020" >
+                                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                                <mat-datepicker #picker></mat-datepicker>
+                                        </mat-form-field> 
+                                </div>
                         </div>
 
                         <div class="row mt-3">
-                                <mat-form-field class="full-width">
-                                        <mat-label>Description</mat-label>
-                                        <textarea matInput #description name="description" required
-                                                maxlength='1000' [(ngModel)]="pub.description"
-                                                placeholder="Short resume" rows="4"></textarea>
-                                        <mat-hint align="start">Write an introduction</mat-hint>
-                                        <mat-hint align="end">{{description.value.length}} / 1000</mat-hint>
-                                </mat-form-field>   
+                                <div class="col-lg-12 align-items-start">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Description</mat-label>
+                                                <textarea matInput #description name="description" required
+                                                        maxlength='1000' [(ngModel)]="pub.description"
+                                                        placeholder="Short resume" rows="4"></textarea>
+                                                <mat-hint align="start">Write an introduction</mat-hint>
+                                                <mat-hint align="end">{{description.value.length}} / 1000</mat-hint>
+                                        </mat-form-field>
+                                </div>
                         </div>
-                        <div class="row mt-3">
-                                <mat-form-field class="full-width">
-                                        <mat-label>Content</mat-label>
-                                        <textarea matInput #content maxlength='4000' name="content"
-                                                [(ngModel)]="pub.descriptionDetailed" required
-                                        placeholder="Content" rows="8"></textarea>
-                                        <mat-hint align="start">Write content here</mat-hint>
-                                        <mat-hint align="end">{{content.value.length}} / 4000</mat-hint>
-                                </mat-form-field>   
+                        <div class="row mt-3 mb-4">
+                                <div class="col-lg-12 align-items-start">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Content</mat-label>
+                                                <textarea matInput #content maxlength='4000' name="content"
+                                                        [(ngModel)]="pub.descriptionDetailed" required
+                                                placeholder="Content" rows="8"></textarea>
+                                                <mat-hint align="start">Write content here</mat-hint>
+                                                <mat-hint align="end">{{content.value.length}} / 4000</mat-hint>
+                                        </mat-form-field>   
+                                </div>
                         </div>
+                        <mat-divider></mat-divider>
+                        <div class="row mt-4 mb-4">   
+                                <div class="col-lg-6 align-items-start">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Username</mat-label>
+                                                <input matInput name="username" required [(ngModel)]="pub.username" 
+                                                        placeholder="Username here" >
+                                        </mat-form-field> 
+                                                       
+                                </div>
+                                <div class="col-lg-6 align-items-start">
+                                        <mat-form-field class="full-width">
+                                                <mat-label>Password</mat-label>
+                                                <input matInput name="password" type="password"
+                                                        required [(ngModel)]="pub.password" 
+                                                                placeholder="Password here" >
+                                        </mat-form-field>  
+                                </div>
+
+                        </div>
+                        <mat-divider class="mt-4"></mat-divider>
                         <div class="row mt-5 justify-content-end">
-                                <button mat-raised-button color="accent" (click)="cancel()"
-                                        class="m-4">
-                                        Cancel
-                                </button>
-                                <button mat-raised-button type="submit" [disabled]="!registerForm.valid"
-                                        color="primary" class="m-4">Submit
-
-                                </button>
+                                <div class="col-lg-6 d-flex justify-content-start align-items-end mb-3">
+                                        <mat-checkbox 
+                                                required [(ngModel)]="terms"
+                                                name="terms">
+                                                <a (click)="openDialog()">Agree with Terms and Conditions</a>
+                                        </mat-checkbox>                                       
+                                </div>
+                                <div class="col-lg-6 d-flex justify-content-end align-items-end">
+                                        <button mat-raised-button color="warn" (click)="cancel()"
+                                                class="m-4">
+                                                Cancel
+                                        </button>
+                                        <button mat-raised-button type="submit" [disabled]="!registerForm.valid"
+                                                color="primary" class="m-4">Submit
+        
+                                        </button>
+                                </div>
+                                
+                               
                         </div>
                       
                 </form>

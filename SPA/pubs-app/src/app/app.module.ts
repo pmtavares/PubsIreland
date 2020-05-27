@@ -34,7 +34,8 @@ import {JwtModule} from '@auth0/angular-jwt';
 import { PubEditComponent } from './components/pub-edit/pub-edit.component';
 import { LoadingComponent } from './components/loading/loading.component';
 import { PubMapComponent } from './components/pub-map/pub-map.component';
-import { GoogleMapsModule } from '@angular/google-maps'
+import { GoogleMapsModule } from '@angular/google-maps';
+import { TermsConditionsComponent } from './components/terms-conditions/terms-conditions.component'
 
 
 @NgModule({
@@ -58,8 +59,10 @@ import { GoogleMapsModule } from '@angular/google-maps'
     PubEditComponent,
     LoadingComponent,
     PubMapComponent,
-
+    TermsConditionsComponent
   ],
+  entryComponents: [TermsConditionsComponent],
+
   imports: [
     BrowserModule,
     HttpClientModule,

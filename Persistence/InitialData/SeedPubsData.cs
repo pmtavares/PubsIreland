@@ -23,7 +23,10 @@ namespace Persistence.InitialData
                         CityId = 1,
                         PhoneNumber= "(01) 670 5777",
                         Website =  "https://www.jwsweetman.ie/",
-                        
+                        ImagePath = "assets/images/pubs/j-w-sweetman.jpg",
+                        DescriptionDetailed = "Our site here at 1&2 Burgh Quay dates back as far as 1808 with a lot of history and stories to tell. Housed inside this wonderful 19Th century building is a microbrewery, a pub and a restaurant. We at J.W. Sweetmans would like to welcome you to be a part of something special. Number 1 Burgh Quay began as a tavern which offered welcome hospitality to the ships that were docked outside its door. Meanwhile, next door at 2 Burgh Quay, flax, rope and hemp was manufactured and sold. Later on, 2 Burgh Quay housed the Dublin Library Society. Meetings were held regularly in what we now know as the “Conversation Room”, accessible on our first floor and still parading its original ceiling roses.  Here we pay homage to our site’s rich history and encourage the appreciation of great Irish literature. There was a time when Ireland was renowned for its brewing excellence, with hundreds of breweries producing beers of every description.  The excise list for 1768 showed returns for forty three brewers in Dublin City, with many of these large operations employing dozens of workers. Dublin was home to a thriving and truly cosmopolitan brewing industry, with twelve breweries situated along the banks of the River Liffey by the end of the eighteen century. In 1756, our namesake, John William Sweetman, established his own extensive network of breweries in the capital. He was an esteemed politician, architect and art connoisseur. By the 1820’s, the Sweetman’s breweries were producing 450 barrels per week, and were bettered only by Guinness’ with 600 barrels per week. ",
+                        Username = "jwsweet"
+
                     },
                     new Pub
                     {
@@ -33,7 +36,9 @@ namespace Persistence.InitialData
                         Address =  "1-2 Burgh Quay, Dublin 2, D02 F243",
                         CityId = 2,
                         PhoneNumber= "(091) 563 634",
-                        Website =  "http://oconnellsbargalway.com/"
+                        Website =  "http://oconnellsbargalway.com/",
+                        Username = "oconell",
+                        
                     },
                     new Pub
                     {
@@ -43,7 +48,8 @@ namespace Persistence.InitialData
                         Address = "17 MacCurtain Street, Centre, Cork, T23 DE79",
                         CityId = 3,
                         PhoneNumber= "(021) 450 9615",
-                        Website = "https://www.theshelbournecork.ie/"
+                        Website = "https://www.theshelbournecork.ie/",
+                        Username = "shell"
                     },
                     new Pub
                     {
@@ -53,7 +59,8 @@ namespace Persistence.InitialData
                         Address = "17 Upper Denmark St, Limerick, V94 T9W3",
                         CityId = 4,
                         PhoneNumber= "(061) 436 677",
-                        Website = "https://www.flannerysbar.ie/"
+                        Website = "https://www.flannerysbar.ie/",
+                        Username = "flanner"
                     },
                      new Pub
                     {
@@ -63,7 +70,9 @@ namespace Persistence.InitialData
                         Address = "81 Talbot St, North City, Dublin, D01 YK51",
                         CityId = 1,
                         PhoneNumber= "(01) 878 8655",
-                        Website = "https://www.thecelt.ie/"
+                        Website = "https://www.thecelt.ie/",
+                        Username = "celt"
+
                     },
                      new Pub
                     {
@@ -73,7 +82,10 @@ namespace Persistence.InitialData
                         Address = "47-48, Temple Bar, Dublin 2, D02 N725",
                         CityId = 1,
                         PhoneNumber= "(01) 672 5286",
-                        Website = "https://www.thetemplebarpub.com/"
+                        Website = "https://www.thetemplebarpub.com/",
+                        Username = "temple",
+                        ImagePath = "assets/images/pubs/templebardublin.jpg",
+                        DescriptionDetailed = "Our story goes as far back 1599 where Sir William Temple , a renowned teacher and philosopher, entered the service of the Lord Deputy of Ireland. In 1609, Temple was made Provost of Trinity College, Dublin and Master Chancery in Ireland and moved to this country. Sir William Temple built his house and gardens on newly reclaimed land here on the corner of Temple Lane and the street called Temple Bar. In 1656, his son, Sir John Temple, acquired additional land which, with reclamation made possible by the building of a new sea wall, allowed the development of the area we know as Temple Bar. In the 17th century “Barr” (later shortened to Bar) usually meant a raised estuary sandbank often used for walking on. Thus the river Liffey embankment alongside the Temple’s Barr or simply Temple Bar. Later this evolved into the present throughfare connecting this whole area from Westmoreland Street to Fishamble Street "
                     },
                      new Pub
                     {
@@ -83,8 +95,55 @@ namespace Persistence.InitialData
                         Address = "11 Forster St, Galway",
                         CityId = 2,
                         PhoneNumber= "(091) 376 561",
-                        Website = "https://anpucan.ie/"
+                        Website = "https://anpucan.ie/",
+                        DescriptionDetailed="Our main focus is the customer and always trying to come up with new ideas to make the customers experience more enjoyable and we hope we are doing just that, so if you are ever in Galway please feel free to drop in and let us know how we are getting on! We take pride in looking after our beers, the Guinness is regularly touted by reviewers and customers alike as the best in Galway, the atmosphere is friendly and welcoming and we would put our bar staff up against the best of them. From the outside it looks very small, and yet as soon as you walk in you realise that it stretches a long way back. At the rear you’ll find our newly renovated beer garden, which for much of the year is a great sun-trap.",
+                        Username = "pucan",
+                        ImagePath = "assets/images/pubs/anpucan.jpg"
                     },
+                     new Pub
+                    {
+
+                        Name= "The Brazen Head",
+                        Description="The Brazen Head has a well-deserved reputation for great food, serving both traditional and contemporary dishes. Famed for our traditional stews of beef and guinness and Irish stew, these hearty dishes combine all the ingredients in one bowl.",
+                        Address ="20 Bridge Street Lower, Dublin 8",
+                        CityId = 2,
+                        PhoneNumber= " 1 6795186",
+                        Website = "http://www.brazenhead.com/",
+                        ImagePath = "assets/images/pubs/the-brazen-head.jpg",
+                        DescriptionDetailed = "The Brazen Head is Irelands oldest pub. In fact there has been a hostelry here since 1198. The present building was built in 1754 as a coaching inn.  However The Brazen Head appears in documents as far back as 1653.  An advertisement from the 1750’s reads “Christopher Quinn of The Brazen Head in Bridge Street has fitted said house with neat accommodations and commodious cellars for said business”. The Brazen Head is located on Bridge Street.  This is the area from where the original settlement that was to become Dublin got its name.  The Irish name for Dublin is Baile Atha Cliath – (pronounced: Ball-ya-Awha-Clia) which means “The Town of the Ford of the Reed Hurdles”.  Beside the pub is the Father Matthew Bridge crosses the river Liffey.  It was at this very spot that the original crossing of the river was located.  Here reed matting was positioned on the river bed which enabled travellers to cross safely at low tide.",
+                        Username = "brazen"
+                    },
+                      new Pub
+                    {
+
+                        Name= "The Brass Fox",
+                        Description="Winner of Best Newcomer Pub Award – East Region, In The Irish Pub Awards 2018. A charming, quirky, and Traditional Irish Pub in the heart of Wicklow Town famous for its delicious wings, friendly staff and charming interior décor! The Brass Fox is a beautiful sea-side pub where you can happily enjoy delicious, home-made food, Signature Cocktails, and Fine Spirits.",
+                        Address ="14-15 Leitrim Pl, Wicklow, Ireland",
+                        CityId = 6,
+                        PhoneNumber= "0404 64432",
+                        Website = "https://wicklow.thebrassfox.ie/",
+                        ImagePath  ="assets/images/pubs/brassfox.jpg",
+                        DescriptionDetailed = "Recently the winner in the Best Newcomer category in the 2018 Irish Pub Awards, The Brass Fox is not your ordinary old pub – " +
+                        "this husband & wife run pub is a new, innovative and quirky spot in its appeal and design. Offering top class Gin Creations, Unrivalled Food Menu, and refined Cocktail List, it is definitely worth treading off the beaten track for! The modern interior combing old charms makes for a memorable visit as you journey from room to room and the food is outstanding. Enjoy a cosy meet-up in the Drawing room, a quiet session in the Meeting Room or the convivial and busy atmosphere of the Lounge area – it’s the perfect location for rowdy gangs, family gatherings, or corporate meetings!",
+                        Username = "brass"
+
+                    },
+                        new Pub
+                    {
+
+                        Name= "The Bridge Tavern",
+                        Description="Nestled in the heart of Wicklow Town, the Bridge Tavern is a unique location for leisure breaks, christenings, family get-togethers and more. We offer quality accommodation in Wicklow Town, delicious breakfast, lunch and dinner served everyday and a wide range of drinks available in our Riverside Lounge, Bar & Snug. ",
+                        Address ="Bridge Street, Wicklow Town",
+                        CityId = 6,
+                        PhoneNumber= "0404 64760",
+                        Website = "https://www.bridgetavern.ie/",
+                        ImagePath  ="assets/images/pubs/tavern.jpg",
+                        DescriptionDetailed = "Recently the winner in the Best Newcomer category in the 2018 Irish Pub Awards, The Brass Fox is not your ordinary old pub – " +
+                        "this husband & wife run pub is a new, innovative and quirky spot in its appeal and design. Offering top class Gin Creations, Unrivalled Food Menu, and refined Cocktail List, it is definitely worth treading off the beaten track for! The modern interior combing old charms makes for a memorable visit as you journey from room to room and the food is outstanding. Enjoy a cosy meet-up in the Drawing room, a quiet session in the Meeting Room or the convivial and busy atmosphere of the Lounge area – it’s the perfect location for rowdy gangs, family gatherings, or corporate meetings!",
+                        Username = "brass"
+
+                    },
+
 
                 };
                 context.Pubs.AddRange(pubs);

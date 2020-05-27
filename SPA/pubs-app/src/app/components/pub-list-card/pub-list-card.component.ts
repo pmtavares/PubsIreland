@@ -20,7 +20,7 @@ export class PubListCardComponent implements OnInit {
 
   getPubs(total: number)
   {
-    this.pubService.getPubsNumber(total).subscribe(
+    this.pubService.getOldestPubs(total).subscribe(
       data => {
         this.pubs = data,
         this.loading = false

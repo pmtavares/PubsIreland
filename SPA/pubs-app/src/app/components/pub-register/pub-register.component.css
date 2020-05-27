@@ -6,7 +6,7 @@
 }
 .full-width
 {
-    width: 95%;
+    width: 99%;
     margin-left: 1em;
 }
 .half-width-wrapper
@@ -15,12 +15,10 @@
 }
 .half-width
 {
-    width: 40%;
-    margin-left: 1em;
+    width: 42%;
 }
 .thirdth-width
 {
     width: 25%;
-    margin-left: 1em;
-    margin-right: 3em;
+
 }

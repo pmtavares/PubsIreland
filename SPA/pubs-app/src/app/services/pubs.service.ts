@@ -35,6 +35,11 @@ export class PubsService implements OnInit{
     return this.http.get<IPub[]>(this.baseUrl+"/oldest/"+total)
   }
 
+  getYoungestPubs(total: number): Observable<IPub[]>
+  {
+    return this.http.get<IPub[]>(this.baseUrl+"/youngest/"+total)
+  }
+
   getRecenttPubs(total: number): Observable<IPub[]>
   {
     return this.http.get<IPub[]>(this.baseUrl+"/recent/"+total)

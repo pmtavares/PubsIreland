@@ -22,7 +22,8 @@ export class MapService implements OnInit{
     return this.http.get(this.baseMapUrl + address + this.mapKey).
     pipe(
       map((response: any) => {
-        return response.results[0].geometry.location;
+        console.log(response);
+        return response.results[0];
         } 
       )
     );

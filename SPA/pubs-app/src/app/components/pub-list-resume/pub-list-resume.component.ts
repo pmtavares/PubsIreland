@@ -15,12 +15,12 @@ export class PubListResumeComponent implements OnInit {
   constructor(private pubService: PubsService) { }
 
   ngOnInit() {
-    this.getPubsByNumber(3);
+    this.getYoungestPubsByNumber(3);
   }
 
-  getPubsByNumber(total: number)
+  getYoungestPubsByNumber(total: number)
   {
-    this.pubService.getPubsNumber(total).subscribe(
+    this.pubService.getYoungestPubs(total).subscribe(
       response => {
         this.pubs = response
         this.loading = false

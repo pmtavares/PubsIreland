@@ -36,7 +36,13 @@ export class PubMapComponent implements OnInit {
 
   ngOnInit() {
 
-    this.GetLatLong(this.address);    
+    //this.GetLatLong(this.address);    
+    this.center = {
+      lat: this.lat,
+      lng: this.long
+    };
+    this.addMarker(this.lat, this.long);
+
     
   }
   
@@ -45,8 +51,8 @@ export class PubMapComponent implements OnInit {
   {
     this.mapService.getLatLng(address).subscribe(
       (data:any)=> {   
-        this.lat = data.lat;
-        this.long = data.lng;
+        this.lat = data.geometry.location.lat;
+        this.long = data.geometry.location.lng;
         this.center = {
           lat: this.lat,
           lng: this.long

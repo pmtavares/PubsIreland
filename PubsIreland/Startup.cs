@@ -38,17 +38,41 @@ namespace PubsIreland
         public IConfiguration Configuration { get; }
 
 
+        public void ConfigureDevelopmentServices(IServiceCollection services)
+        {
+            services.AddDbContext<DataContext>(
+                 options => {
+                     options.UseMySql(Configuration.GetConnectionString("DefaultConnection")); //MySQL
+
+                 }
+             );
+
+            ConfigureServices(services);
+        }
+
+
+        public void ConfigureProductionServices(IServiceCollection services)
+        {
+            services.AddDbContext<DataContext>(
+                 options => {
+                     options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+
+                 }
+             );
+
+            ConfigureServices(services);
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
 
-            services.AddDbContext<DataContext>(options =>
+         /*   services.AddDbContext<DataContext>(options =>
                 {
-                    options.UseMySql(Configuration.GetConnectionString("DefaultConnection"));
+                    options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 }
             );
 
-
+        */
 
             
             services.AddCors(options => {
@@ -104,15 +128,27 @@ namespace PubsIreland
             else
             {
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                //app.UseHsts();
+                app.UseHsts();
             }
+            app.UseDeveloperExceptionPage();
+            app.UseHttpsRedirection();
             app.UseCors(x=> x.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
             //app.UseCors("CorsPolicy");
 
             app.UseAuthentication();
 
-            app.UseHttpsRedirection();
-            app.UseMvc();
+            
+
+            //After changing angular.json file to point the build to wwwroot folder, insert the
+            //Following two lines
+            app.UseDefaultFiles(); //Look for index file
+            app.UseStaticFiles(); //Look for files in the wwwroot folder
+            app.UseMvc(routes => {
+                routes.MapSpaFallbackRoute(
+                name: "spa-fallback",
+                defaults: new { controller = "Fallback", action = "Index" }
+                );
+            });
             
         }
     }

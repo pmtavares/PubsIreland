@@ -15,7 +15,7 @@ export class PubsComponent implements OnInit {
   constructor(private pubService: PubsService) { }
 
   ngOnInit() {
-    this.getPubs(8);
+    this.getPubs(12);
   }
 
   getPubs(pubs: number)

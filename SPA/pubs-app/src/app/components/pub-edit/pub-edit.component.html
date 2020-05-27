@@ -1,5 +1,7 @@
+<app-loading [loading]="loading"></app-loading>
 <div class="edit-profile-container">
-        <mat-card>
+
+  <mat-card>
   <div class="edit-form">
           <div class="row justify-content-center mb-5"><h3>Edit Profile</h3></div>
           <form #editForm="ngForm" (ngSubmit)="editPub()" *ngIf="pub">

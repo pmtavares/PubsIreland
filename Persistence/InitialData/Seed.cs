@@ -40,7 +40,13 @@ namespace Persistence.InitialData
                     {
                         Name="Ashbourne",
                         County="Meath"
+                    },
+                     new City
+                    {
+                        Name="Wicklow City",
+                        County="Wicklow"
                     }
+
                 };
                 context.Cities.AddRange(cities);
             }

@@ -29,9 +29,9 @@ namespace PubsIreland
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
-                    context.Database.Migrate(); //apply any changes in the database
+                    //context.Database.Migrate(); //apply any changes in the database
                     //Seed.SeedData(context);
-                    SeedPubsData.SeedData(context);
+                    //SeedPubsData.SeedData(context);
 
                 }
                 catch(Exception ex)
